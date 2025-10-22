@@ -41,7 +41,7 @@ while True:
     p
 ```
 ### **Test B — Function Code Loop**
-**Filename:** `speed_test_a_baseline.py`
+**Filename:** `speed_test_b_function.py`
 ```python
 
 from machine import Pin
@@ -55,7 +55,7 @@ def flash():
 flash()
 ```
 ### **Test C — Native Code Loop**
-**Filename:** `speed_test_a_baseline.py`
+**Filename:** `speed_test_c_native.py`
 ```python
 
 
