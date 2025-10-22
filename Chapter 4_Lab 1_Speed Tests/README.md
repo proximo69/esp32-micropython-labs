@@ -94,13 +94,15 @@ Sample Rate: ≥ 10 MHz            recommended (minimum 5 MHz).
 
 Observation: Square wave output with measurable high/low periods.
 
-Measurements and Expected Results
-Test	Description	Typical Period (µs)	Approx. Frequency (kHz)
+## 📈 Measurements and Expected Results
 
-A	Baseline	≈ 11–12 µs	83–90 kHz
-B	Function call	Slightly slower	~75–80 kHz
-C	Native decorator	Noticeably faster	~130–150 kHz
+| Test | Description        | Typical Period (µs) | Approx. Frequency (kHz) |
+|------|--------------------|--------------------:|------------------------:|
+| **A** | Baseline           | ≈ 11–12 µs          | 83–90 kHz               |
+| **B** | Function call      | Slightly slower     | ~75–80 kHz              |
+| **C** | Native decorator   | Noticeably faster   | ~130–150 kHz            |
 
+*Results may vary depending on board and firmware version.*
 
 Results will vary by board and firmware version.
 
