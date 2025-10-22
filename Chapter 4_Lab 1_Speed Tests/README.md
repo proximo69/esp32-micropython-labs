@@ -40,6 +40,10 @@ while True:
     p.value(1)
     p
 ```
+
+Direct loop toggling the GPIO pin.
+Provides the pure interpreter baseline for speed measurement.
+
 ### **Test B — Function Code Loop**
 **Filename:** `speed_test_b_function.py`
 ```python
@@ -54,6 +58,10 @@ def flash():
 
 flash()
 ```
+
+The same toggle loop wrapped inside a function.
+Demonstrates how MicroPython’s function-call structure introduces additional overhead.
+
 ### **Test C — Native Code Loop**
 **Filename:** `speed_test_c_native.py`
 ```python
@@ -72,3 +80,53 @@ def flash():
         p.value(0)
 
 flash()
+```
+
+Uses the @micropython.native decorator to compile the function to native machine code.
+Measures performance improvement over pure interpreted code.
+
+
+## Logic Analyzer Setup
+Connection	                             Description
+Channel 0 → GPIO 2	               Capture toggle signal
+Ground → ESP32 GND	   Common ground reference
+Sample Rate: ≥ 10 MHz            recommended (minimum 5 MHz).
+
+Observation: Square wave output with measurable high/low periods.
+
+Measurements and Expected Results
+Test	Description	Typical Period (µs)	Approx. Frequency (kHz)
+
+A	Baseline	≈ 11–12 µs	83–90 kHz
+B	Function call	Slightly slower	~75–80 kHz
+C	Native decorator	Noticeably faster	~130–150 kHz
+
+
+Results will vary by board and firmware version.
+
+Interpretation
+Baseline vs. Function: The function wrapper adds minor call overhead per loop iteration.
+Native Compilation: Reduces interpreter overhead, nearly doubling GPIO speed.
+Pulse Asymmetry: High and low durations differ slightly (~0.4 µs) due to instruction scheduling and timing granularity.
+Hardware Potential: The ESP32’s C-level GPIO toggling can exceed 10 MHz, showing how much performance MicroPython trades for convenience.
+
+## 🧩 Discussion Questions
+
+1. Why do the high and low durations differ slightly?
+
+2. How does function encapsulation affect timing consistency?
+
+3. How does the @micropython.native decorator reduce overhead?
+
+4. What further gains might @micropython.viper or machine.Signal provide?
+
+5. In which types of projects would such speed differences matter most?
+
+
+## 📓 Summary
+
+This experiment illustrates how MicroPython’s interpreter introduces significant timing overhead compared to compiled execution.
+By progressively optimizing the same loop — from direct inline code to function-based, then native-compiled — you can visualize how code structure and decorators affect GPIO performance.
+
+Key Takeaway:
+For applications demanding microsecond-level timing (PWM generation, serial protocols, or pulse
