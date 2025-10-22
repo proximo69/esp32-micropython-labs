@@ -35,6 +35,7 @@ while True:
 Direct loop toggling the GPIO pin.
 
 Provides the pure interpreter baseline for speed measurement.
+
 Test B — Function Encapsulation
 Filename: speed_test_b_function.py
 
