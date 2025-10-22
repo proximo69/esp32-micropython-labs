@@ -33,8 +33,8 @@ As my studies progress, the repository will evolve beyond the textbook into inde
 
 | Lab | Topic | Description | Status |
 |-----|-------|--------------|--------|
-| **1** | Blinky | Basic GPIO output and timing control | ✅ Completed |
-| **2** | Input Button | Reading digital inputs and debouncing | ✅ Completed |
+| **Chapter 3_Lab 1** | Blinky | Basic GPIO output and timing control | ✅ Completed |
+| **Chapter 4_Lab 1** | Speed Tests | Reading digital inputs and debouncing | ✅ Completed |Measuring GPIO toggle speed under different MicroPython execution modes |
 | **3** | LED Drivers | BJT and MOSFET switching circuits | ⚙️ In review |
 | **4** | Phased Pulses | Timing analysis and atomic GPIO control | 🧠 Current focus |
 | **5** | Bitstream | Generating precise pulse sequences | ⏳ Upcoming |
