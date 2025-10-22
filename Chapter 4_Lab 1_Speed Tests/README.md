@@ -1,4 +1,4 @@
-##README 
+
 LAB to Accompany Programming the ESP32 in MicroPython by Harry Fairchild
 Chapter 4 – Lab 1: How Fast? (Expanded Speed Tests)
 Goal
