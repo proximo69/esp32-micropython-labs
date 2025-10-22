@@ -22,6 +22,7 @@ Software	                                   PulseView (Sigrok)
 Breadboard & Jumper Wires   	For clean signal connection
 
 🧪 Lab Tasks
+
 Test A — Baseline Loop
 Filename: speed_test_a_baseline.py
 
