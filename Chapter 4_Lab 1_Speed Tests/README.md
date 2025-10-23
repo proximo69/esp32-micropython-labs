@@ -132,3 +132,26 @@ By progressively optimizing the same loop — from direct inline code to functio
 
 Key Takeaway:
 For applications demanding microsecond-level timing (PWM generation, serial protocols, or pulse
+
+
+
+## ⚠️ Notes on Trigger Timing and Analyzer Limitations
+
+During testing of the `@micropython.native` version of the **Flash Speed Test** (20-second pulse loop), I encountered timing issues when attempting to capture the waveform using the **HiLetgo 24 MHz USB Logic Analyzer** with **PulseView**.
+
+### Observed Behavior
+- When using a **rising-edge trigger**, PulseView would **timeout before the pulse occurred**, stopping the capture before any data was recorded.  
+- Increasing the pulse duration from 2 s to 20 s caused the ESP32 to **lock up** (remain “busy”) due to the `@micropython.native` decorator executing the tight loop without interpreter interrupts.  
+- Lowering the analyzer’s **sample rate** from 24 MHz to 12 MHz effectively **doubled the real-time capture window**, allowing slightly more time to arm the analyzer and start the MicroPython script before timeout.
+
+### Technical Explanation
+- The HiLetgo analyzer is a **Saleae Logic clone** based on the **Cypress FX2LP (CY7C68013A)** chip. It streams samples directly over USB and lacks onboard memory or a true hardware trigger engine.  
+- PulseView’s “trigger” for this device is **software-simulated** — it buffers streamed data and discards it until the condition is met, but times out if no trigger occurs within a short period (typically a few seconds).  
+- Because of this limitation, it is **not possible to disable auto-trigger** or to **wait indefinitely** for a rising-edge event.  
+- Lowering the sample rate extends the real-time duration of the capture (e.g., at 12 MHz, a 1 M-sample capture covers roughly twice the real time of a 24 MHz capture).
+
+### Takeaway
+- This analyzer performs well for **short, repetitive, or periodic signals**, but not for **long-delay, single-shot events**.  
+- For extended trigger waits or precise pre/post-trigger control, consider upgrading to a logic analyzer with a true hardware trigger engine — such as a **Kingst LA2016**, **DSLogic Plus**, or genuine **Saleae Logic**.
+
+---
