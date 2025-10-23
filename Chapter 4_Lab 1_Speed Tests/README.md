@@ -142,7 +142,7 @@ During testing of the `@micropython.native` version of the **Flash Speed Test** 
 ### Observed Behavior
 - When using a **rising-edge trigger**, PulseView would **timeout before the pulse occurred**, stopping the capture before any data was recorded.  
 - Increasing the pulse duration from 2 s to 20 s caused the ESP32 to **lock up** (remain “busy”) due to the `@micropython.native` decorator executing the tight loop without interpreter interrupts.  
-- Lowering the analyzer’s **sample rate** from 24 MHz to 12 MHz effectively **doubled the real-time capture window**, allowing slightly more time to arm the analyzer and start the MicroPython script before timeout.
+- Lowering the analyzer’s **sample rate** from 24 MHz to 12 MHz effectively **doubled the real-time capture window**, allowing slightly more time to arm the analyzer and start the MicroPython script before timeout. This was not enough to arm the trigger in time for effective capture however. 
 
 ### Technical Explanation
 - The HiLetgo analyzer is a **Saleae Logic clone** based on the **Cypress FX2LP (CY7C68013A)** chip. It streams samples directly over USB and lacks onboard memory or a true hardware trigger engine.  
