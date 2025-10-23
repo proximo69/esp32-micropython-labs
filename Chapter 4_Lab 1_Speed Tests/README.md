@@ -137,7 +137,7 @@ For applications demanding microsecond-level timing (PWM generation, serial prot
 
 ## ⚠️ Notes on Trigger Timing and Analyzer Limitations
 
-During testing of the `@micropython.native` version of the **Flash Speed Test** (20-second pulse loop), I encountered timing issues when attempting to capture the waveform using the **HiLetgo 24 MHz USB Logic Analyzer** with **PulseView**.
+During testing of the `@micropython.native` version of the **Flash Speed Test** (2-second pulse loop), I encountered timing issues when attempting to capture the waveform using the **HiLetgo 24 MHz USB Logic Analyzer** with **PulseView**.
 
 ### Observed Behavior
 - When using a **rising-edge trigger**, PulseView would **timeout before the pulse occurred**, stopping the capture before any data was recorded.  
