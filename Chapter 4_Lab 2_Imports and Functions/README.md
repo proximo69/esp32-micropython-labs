@@ -30,7 +30,7 @@ You’ll explore the difference between **top-level code** (which executes on im
 
 ## 📊 Results & Verification  
 - The logic analyzer capture shows a **square-wave** pattern on GPIO 2 with ~4 µs high and ~4 µs low, indicating a ~125 kHz toggle frequency.  
-- The screenshot (`pulseview_speedtest_baseline.png`) is included in this repository for documentation and verification.
+- The screenshot (`pulseview_speedtest_baseline.jpg`) is included in this repository for documentation and verification.
 
 ## 📁 File Structure
 Chapter 4_Lab 2_Imports_and_Functions/ │   README.md │   main.py │   speedtest_a_baseline.py │   pulseview_speedtest_baseline.jpg
