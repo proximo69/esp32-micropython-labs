@@ -33,7 +33,11 @@ You’ll explore the difference between **top-level code** (which executes on im
 - The screenshot (`pulseview_speedtest_baseline.jpg`) is included in this repository for documentation and verification.
 
 ## 📁 File Structure
-Chapter 4_Lab 2_Imports_and_Functions/ │   README.md │   main.py │   speedtest_a_baseline.py │   pulseview_speedtest_baseline.jpg
+Chapter_4_Lab_2_Imports_and_Functions/
+├── README.md
+├── main.py
+├── speedtest_a_baseline.py
+└── pulseview_speedtest_baseline.jpg
 
 ## ✅ Outcome  
 By completing this lab, you now have a modular MicroPython project: your `main.py` remains lightweight and simply calls external modules, while the modules themselves encapsulate the actual functionality. This sets a solid foundation for your upcoming projects (e.g., BJT/MOSFET LED drivers) where structure, reuse, and clarity will matter.
