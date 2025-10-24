@@ -1,5 +1,4 @@
 from machine import Pin
-import time
 
 def run(pin_no=2):
     """Continuous GPIO toggle for logic analyzer measurement."""
