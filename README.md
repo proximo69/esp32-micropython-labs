@@ -36,9 +36,11 @@ As my studies progress, the repository will evolve beyond the textbook into inde
 | **Chapter 3_Lab 1** | Blinky | Toggling an LED using GPIO to demonstrate basic digital output control in MicroPython | ✅ Completed |
 | **Chapter 4_Lab 1** | Speed Tests |Measuring GPIO toggle speed under different MicroPython execution modes | ✅ Completed |
 | Chapter 4_Lab 2 | Imports & Functions | Modular programming in MicroPython by using imports and functions  | ✅ Completed |
-| Chapter 4_Lab 3 | Phased Pulses | Timing analysis and atomic GPIO control | 🧠 Current focus |
-| **5** | Bitstream | Generating precise pulse sequences | ⏳ Upcoming |
-| **6** | RMT (Advanced) | Hardware-timed signal generation | ⏳ Upcoming |
+| Chapter 4_Lab 3 | Phased Pulses & Bitstream Generation | Timing analysis and atomic GPIO control | 🧠 Current focus |
+| Chapter 4_Lab 4| RMT Advanced | Hardware-timed signal generation | ⏳ Upcoming |
+| Chapter 5_Lab 1 | Combined LED Driver Test | Demonstrates controlling both BJT and MOSFET LED driver circuits using modular MicroPython code to compare switching behavior and performance. | ⏳ Upcoming |
+| Chapter 6_Lab 1 | Pushbutton Input | Introduces digital input handling using simple pushbuttons, demonstrating basic state detection without debounce or interrupt logic. | ⏳ Upcoming |
+| Chapter 6_Lab 2 | Robust Inputs | Expands input handling with debouncing, interrupts, and simple state machines to create reliable, event-driven control. | ⏳ Upcoming |
 
 *(New labs will be added as the series progresses.)*
 
