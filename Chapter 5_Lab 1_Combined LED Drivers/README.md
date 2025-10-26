@@ -103,8 +103,47 @@ Defined at the top of `main.py`:
 
 7. After completion, verify that both LEDs are off.
 
+## Circuit Diagrams
 
+### 🧲 BJT LED Driver (NPN, e.g., PN2222)
 
+3.3V ──[220Ω]──▶│──┐
+                     │
+                     │ LED (red)
+                     │
+                 Collector
+                    │
+  ESP32 GPIO16 ─┬──B   NPN BJT
+                │      (PN2222)
+                └───[1kΩ]───┤
+                            │
+                          Emitter
+                            │
+                           GND
+
+**Operation:**  
+When GPIO16 outputs HIGH, base current flows through the 1 kΩ resistor into the BJT base, turning it ON and allowing current to flow through the LED → resistor → collector → emitter → GND.  
+When GPIO16 goes LOW, the transistor switches OFF and the LED turns off.
+
+---
+
+### ⚙️ MOSFET LED Driver (N-channel, logic-level)
+
+3.3V ──[220Ω]──▶│──┐
+                     │
+                     │ LED (green)
+                     │
+                 Drain
+                    │
+  ESP32 GPIO17 ────Gate
+                    │
+               Source → GND
+
+**Operation:**  
+When GPIO17 outputs HIGH (~3.3 V), the MOSFET gate voltage rises enough to switch it ON, allowing current to flow through the LED.  
+When GPIO17 goes LOW, the MOSFET switches OFF and current stops.
+
+> 💡 *In practice, a small 100 Ω gate resistor can be added between GPIO17 and the MOSFET gate for noise suppression, though not strictly required in low-speed tests like this.*
 
 ---
 
