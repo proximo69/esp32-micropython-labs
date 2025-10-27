@@ -126,8 +126,6 @@ Present your observations, measurements, and screenshots.
 
 **Figure 1.** Square-wave pulse captured on GPIO14 using PulseView.
 
-> ![PulseView waveform](./images/pulseview_capture.png)
-
 
 Fixed Delay Pulse with Variable Workload 
 
